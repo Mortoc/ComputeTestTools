@@ -58,7 +58,10 @@ namespace Mortoc.Compute.TestTools
             
             public void Dispose()
             {
-                SafeDestroy.Asset(Shader);
+                if (Shader) 
+                {
+                    ComputeShader.DestroyImmediate(Shader);
+                }
             }
         }
 
@@ -237,16 +240,29 @@ namespace Mortoc.Compute.TestTools
         {
             foreach (var buffer in _testBuffers)
             {
-                SafeDestroy.Buffer(buffer);
+                if (buffer != null)
+                {
+                    buffer.Dispose();
+                }
             }
             
             foreach (var fixture in _testFixtures)
             {
-                SafeDestroy.Asset(fixture.Shader);
+                if (fixture.Shader)
+                {
+                    ComputeShader.DestroyImmediate(fixture.Shader);
+                }
             }
             
-            SafeDestroy.Asset(TriangleMesh);
-            SafeDestroy.Asset(QuadMesh);
+            if (TriangleMesh.IsValueCreated)
+            {
+                Mesh.DestroyImmediate(TriangleMesh.Value);
+            }
+            
+            if (QuadMesh.IsValueCreated)
+            {
+                Mesh.DestroyImmediate(QuadMesh.Value);
+            }
         }
 
         /// <summary>
