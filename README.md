@@ -47,7 +47,7 @@ public class TestSomeShader : ComputeUnitTest
     // ComputeShaderTest attribute signals this is a setup function for a
     // unit test in the corresponding compute shader test.
     [ComputeShaderTest] 
-    public void TestUpdateSubDBufferIncrementsCounter(ComputeShaderTestFixture fixture)
+    public void TestSomeFeatureOfComputeShader(ComputeShaderTestFixture fixture)
     {
         // The C# code here is run before the compute shader for any setup code.
         var testBuffer = GetTestBuffer(
