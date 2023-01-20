@@ -50,6 +50,8 @@ public class TestSomeShader : ComputeUnitTest
     public void TestSomeFeatureOfComputeShader(ComputeShaderTestFixture fixture)
     {
         // The C# code here is run before the compute shader for any setup code.
+        // Using the GetTestBuffer method allows the test to track the buffer and 
+        // clean it up properly.
         var testBuffer = GetTestBuffer(
             $"{nameof(TestSomeShader)}.SomeBuffer",
             GraphicsBuffer.Target.Structured,
