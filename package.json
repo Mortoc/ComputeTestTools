@@ -14,7 +14,7 @@
   "category": "Testing",
   "description": "Unit Testing Tools for Compute Shaders",
   "dependencies": {
-    "com.unity.mathematics": "1.2.1",
+    "com.unity.mathematics": "1.2.1"
   },
   "license": "MIT",
   "author": "Mortoc (https://github.com/Mortoc/ComputeTestTools)",
