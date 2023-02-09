@@ -8,9 +8,6 @@ Usage:
 ### TestSomeShader.compute
 File name must match the C# test file
 ```c++
-#ifndef MY_SHADER_TEST_COMPUTE
-#define MY_SHADER_TEST_COMPUTE
-
 // Include the ASSERT macro
 #include "Packages/com.mortoc.compute.test/ComputeAssert.hlsl"
 
@@ -33,8 +30,6 @@ void TestSomeFeatureOfComputeShader (uint3 id : SV_DispatchThreadID)
     ASSERT(index >= 0 && index < 32);   
     ASSERT(result == 7);
 }
-
-#endif
 ```
 
 
